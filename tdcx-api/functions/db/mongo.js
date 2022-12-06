@@ -1,6 +1,6 @@
-require('dotenv/config')
+
 const mongoose = require("mongoose");
-const uri = "mongodb+srv://apekshatdcx:Jape123@clusterudemy.6tyqr.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://apekshatdcx:Jape123@clusterudemy.6tyqr.mongodb.net/tdcx?retryWrites=true&w=majority";
 
 exports.mongoConnection = (cb) =>{
     mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })

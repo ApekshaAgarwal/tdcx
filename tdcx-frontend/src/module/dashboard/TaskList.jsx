@@ -105,7 +105,7 @@ export default function TaskList({ tasks, deleteTask, updateTask,search  }) {
       <Alert className='delete_alert' visible={deleteConfirm.status} onOk={handleDelete} onClose={() =>
         setDeleteConfirm({ status: false, item: null })
       } content={
-        `Are you sure want to delete task ${deleteConfirm?.item?.name}?`
+        `Delete Task ${deleteConfirm?.item?.name}?`
       } type="confirm" />
     </>
   );

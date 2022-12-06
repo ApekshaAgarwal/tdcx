@@ -1,12 +1,12 @@
-require('dotenv/config')
-const express = require("express");
+const functions = require("firebase-functions");
+
+const express = require('express')
 const bodyParse = require('body-parser');
 const cors = require('cors');
-
+const PORT = 3000;
+const app = express()
 const mongo =  require('./db/mongo')
 const appRouter = require('./routes')
-
-const app = express();
 
 const urlEncodedParser = bodyParse.urlencoded({extended:false});
 
@@ -39,12 +39,10 @@ app.use('*', function (req, res, next) {
 });
 
 
-const port = process.env.PORT;
-
 mongo.mongoConnection((connectData)=>{
     if (connectData.success) {
-        app.listen(port, function () {
-            console.log(`Server is up on ${port}`)
+        app.listen(PORT, function () {
+            console.log(`Server is up on ${PORT}`)
             global.mongoDB = connectData.client;
         })
     } else {
@@ -52,3 +50,5 @@ mongo.mongoConnection((connectData)=>{
     }
 })
 
+
+exports.app = functions.https.onRequest(app)

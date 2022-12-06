@@ -1,5 +1,5 @@
 exports.findOne = async function(findObj){
-   const findData = await global.mongoDB.collection('tasks').findOne(findObj);
+   const findData = await global.mongoDB.collection('tasks').find(findObj);
    return findData;
 }
 

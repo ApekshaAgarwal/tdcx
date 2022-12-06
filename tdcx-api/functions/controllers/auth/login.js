@@ -1,4 +1,4 @@
-require('dotenv/config')
+
 const authModel = require('../../model/authModel');
 const {jwtSign} = require('../../utility');
 exports.login = async(req, res, next) => {

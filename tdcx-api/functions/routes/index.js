@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { login } = require('../controllers/auth/login');
-const { createTask, taskList, taskUpdate, taskDelete } = require('../controllers/task/task');
-const {verifyToken} = require('../middleware/middleware');
+const { createTask, taskList, taskUpdate, taskDelete } = require('../controllers/task');
+const {verifyToken} = require('../utility');
 //Auth Routes
 router.route('/').get((req, res, next)=>{
     return res.status(200).json({"success":true,"message":"TDCX APIs"});

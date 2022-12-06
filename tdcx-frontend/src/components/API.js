@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const Baseurl = {
-  url: "https://secret-citadel-11697.herokuapp.com",
+  url: "https://us-central1-tdcx-node.cloudfunctions.net/app",
 };
 let user;
 
@@ -23,14 +23,6 @@ const apiService = {
   getAccessToken() {
     const state = this.getReduxState();
     return state?.user?.token;
-  },
-  getAzureADToken() {
-    const state = this.getReduxState();
-    return state?.azureAd?.data;
-  },
-  getRefreshToken() {
-    const state = this.getReduxState();
-    return state?.user?.data?.refresh_token;
   },
 
   getUser: () => user,
